@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/kmj-007.github.io/pomodaroclock/static/css/main.cd5f4b2a.css",
-    "main.js": "/kmj-007.github.io/pomodaroclock/static/js/main.61a0f612.js",
-    "index.html": "/kmj-007.github.io/pomodaroclock/index.html",
-    "main.cd5f4b2a.css.map": "/kmj-007.github.io/pomodaroclock/static/css/main.cd5f4b2a.css.map",
-    "main.61a0f612.js.map": "/kmj-007.github.io/pomodaroclock/static/js/main.61a0f612.js.map"
+    "main.css": "/pomodaroclock/static/css/main.cd5f4b2a.css",
+    "main.js": "/pomodaroclock/static/js/main.61a0f612.js",
+    "index.html": "/pomodaroclock/index.html",
+    "main.cd5f4b2a.css.map": "/pomodaroclock/static/css/main.cd5f4b2a.css.map",
+    "main.61a0f612.js.map": "/pomodaroclock/static/js/main.61a0f612.js.map"
   },
   "entrypoints": [
     "static/css/main.cd5f4b2a.css",
