@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/pomodaroclock/static/css/main.cd5f4b2a.css",
-    "main.js": "/pomodaroclock/static/js/main.61a0f612.js",
+    "main.js": "/pomodaroclock/static/js/main.11edce56.js",
+    "static/media/beep.mp3": "/pomodaroclock/static/media/beep.397daeeddac155533573.mp3",
     "index.html": "/pomodaroclock/index.html",
     "main.cd5f4b2a.css.map": "/pomodaroclock/static/css/main.cd5f4b2a.css.map",
-    "main.61a0f612.js.map": "/pomodaroclock/static/js/main.61a0f612.js.map"
+    "main.11edce56.js.map": "/pomodaroclock/static/js/main.11edce56.js.map"
   },
   "entrypoints": [
     "static/css/main.cd5f4b2a.css",
-    "static/js/main.61a0f612.js"
+    "static/js/main.11edce56.js"
   ]
 }
