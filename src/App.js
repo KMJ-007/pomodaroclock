@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import Length from "./Length";
-// import breakAudio from './beep.mp3';
-// const sound = document.getElementById("beep");
+import audio from './beep.mp3';
 
 const playBreaksound = () => {
-  var breakAudio = new Audio("./beep.mp3");
+  var breakAudio = new Audio(audio);
   // console.log(breakAudio.currentTime)
   breakAudio.currentTime = 0;
   breakAudio.play();
