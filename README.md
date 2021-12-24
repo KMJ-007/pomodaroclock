@@ -2,10 +2,10 @@
 
 In this project i have created pomodaro clock
 
-you can set timer 
+you can set session length and break length
 
 ## link:-
-link of project:- [https:/kmj-007.github.io/pomodaroclock](https:/kmj-007.github.io/pomodaroclock)
+link of project:- [https:/kmj-007.github.io/pomodaroclock](https://kmj-007.github.io/pomodaroclock/)
 
 # Technology's used to build:-
 ![html5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
