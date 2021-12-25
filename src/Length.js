@@ -1,21 +1,21 @@
 import React from "react";
 
-export default function Length({ title, changeTime, type, time, formateTime }) {
+export default function Length({ id,title, changeTime, type, time, formateTime,butdecid,btnincid,lengthId }) {
   return (
     <div className="length-control">
-      <h3 className="title-length">{title}</h3>
+      <h3 className="title-length" id={id}>{title}</h3>
       <div className="time-set">
         <button
-          id="break-decrement"
+          id={butdecid}
           onClick={() => {
             changeTime(-60, type);
           }}
         >
           <i></i>-
         </button>
-        <h3 id="break-length">{formateTime(time)}</h3>
+        <h3 id={lengthId}>{formateTime(time)}</h3>
         <button
-          id="break-increment"
+          id={btnincid}
           onClick={() => {
             changeTime(60, type);
           }}

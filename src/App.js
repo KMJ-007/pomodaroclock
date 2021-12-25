@@ -13,9 +13,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: 25 * 60,
-      breakTime: 5 * 60,
-      sessionTime: 25 * 60,
+      display: 25*60,
+      breakTime: 5*60 ,
+      sessionTime: 25*60,
       timerOn: false,
       onBreak: false,
     };
@@ -28,29 +28,33 @@ export default class App extends Component {
 
   formateTime = (time) => {
     let miniute = Math.floor(time / 60);
-    let seconds = time % 60;
-    return (
-      (miniute < 10 ? "0" + miniute : miniute) +
-      ":" +
-      (seconds < 10 ? "0" + seconds : seconds)
-    );
-  };
+    let seconds = time - miniute*60;
+    miniute=miniute < 10 ? "0" + miniute : miniute;
+    seconds= seconds < 10 ? "0" + seconds : seconds;
+  
+    return (miniute+":"+seconds)};
 
   changeTime = (amount, type) => {
     if (type === "break") {
-      if (this.state.breakTime <= 60 && amount < 0) {
+      if (this.state.breakTime<= 60  && amount<0 || this.state.breakTime>=3600) {
         return;
       }
-      this.setState({
-        breakTime: this.state.breakTime + amount,
-      });
+      else{
+
+        this.setState({
+          breakTime: this.state.breakTime + amount,
+        });
+      }
     } else {
-      if (this.state.sessionTime <= 60 && amount < 0) {
+      if (this.state.sessionTime<= 60 && amount<0 || this.state.sessionTime>=3600 ) {
         return;
       }
-      this.setState({
-        sessionTime: this.state.sessionTime + amount,
-      });
+      else{
+
+        this.setState({
+          sessionTime: this.state.sessionTime+ amount,
+        });
+      }
       if (!this.state.timerOn) {
         this.setState({
           display: this.state.display + amount,
@@ -67,7 +71,7 @@ export default class App extends Component {
       let interval = setInterval(() => {
         date = new Date().getTime();
         if (date > nextDate) {
-          if (this.state.display <= 0 && !onBreakVariable) {
+          if (this.state.display  <= 0 && !onBreakVariable) {
             {
               playBreaksound();
             }
@@ -87,12 +91,16 @@ export default class App extends Component {
             });
 
             this.setState({
-              display: this.state.sessionTime,
+              display: this.state.sessionTime ,
             });
             // return this.state.sessionTime;
           }
+          // let miniute = Math.floor(time / 60);
+          // let seconds = time - miniute*60;
+          //here
+          // console.log("experiment",this.formateTime(0.017))
           this.setState({
-            display: this.state.display - 1,
+            display: this.state.display -1,
           });
           nextDate += s;
         }
@@ -113,10 +121,15 @@ export default class App extends Component {
     });
   }; //end of control time
   resetTime = () => {
+    
+    this.controlTime();
+    
     this.setState({
-      display: 25 * 60,
-      breakTime: 5 * 60,
-      sessionTime: 25 * 60,
+      display: 25*60 ,
+      breakTime: 5 *60,
+      sessionTime: 25*60 ,
+    
+      // timerOn:false
     });
   }; //end of resetTIme
   render() {
@@ -125,16 +138,22 @@ export default class App extends Component {
         <h1 className="main-title">Pomodaro Clock</h1>
         <div className="dualContainer">
           <Length
-            id="“Break Length”"
-            title={"break length"}
+            id="break-label"
+            title={"Break Length"}
+            butdecid="break-decrement"
+            btnincid="break-increment"
+            lengthId="break-length"
             changeTime={this.changeTime}
             type={"break"}
-            time={this.state.breakTime}
+            time={this.state.breakTime }
             formateTime={this.formateTime}
           />
           <Length
             id="session-label"
-            title={"session length"}
+            title={"Session Length"}
+            butdecid="session-decrement"
+            btnincid="session-increment"
+            lengthId="session-length"
             changeTime={this.changeTime}
             type={"session"}
             time={this.state.sessionTime}
@@ -143,8 +162,9 @@ export default class App extends Component {
         </div>
         <h3 id="timer-label">{this.state.onBreak ? "Break" : "session"}</h3>
         <h1 id="time-left" className="display-title">
-          {this.formateTime(this.state.display)}
+          {this.formateTime(this.state.display )}
         </h1>
+    <audio id = "beep" preload = "auto" src=""/>
         <div className="button-center">
           <button
             id="start_stop"
